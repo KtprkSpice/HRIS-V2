@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4bc4642642c7d4d8407e2c747cf9ce4fcadf9d9c
 /vendor/
 node_modules/
 npm-debug.log
@@ -29,6 +32,7 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+<<<<<<< HEAD
 =======
 *.log
 .DS_Store
@@ -55,3 +59,5 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 >>>>>>> 95395f4 (Frist commit)
+=======
+>>>>>>> 4bc4642642c7d4d8407e2c747cf9ce4fcadf9d9c
