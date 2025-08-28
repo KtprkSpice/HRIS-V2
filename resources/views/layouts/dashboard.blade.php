@@ -17,9 +17,12 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    {{-- Swal --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-white dark:bg-gray-800 dark:border-gray-700">
+<body class="bg-gray-800 dark:bg-gray-800 dark:border-gray-700">
 
 
     <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -42,12 +45,6 @@
                         <span
                             class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Flowbite</span>
                     </a>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                        </svg>
-                    </span>
                 </div>
                 <div class="flex items-center">
                     <div class="flex items-center ms-3">
@@ -230,13 +227,43 @@
         </div>
     </aside>
 
-    <div class="p-4 sm:ml-64 bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 h-full">
-        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14 ">
+    <div class="p-4 sm:ml-64 bg-gray-800 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 ">
+        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14 h-screen">
             @yield('content')
         </div>
     </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+{{-- Swal Confirmation --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all forms with class 'delete-form'
+        const deleteForms = document.querySelectorAll('.delete-form');
+
+        // Add event listener to each form
+        deleteForms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent immediate submission
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // If confirmed, submit the form
+                        this.submit();
+                    }
+                });
+            });
+        });
+    });
+    </script>
 
 </html>

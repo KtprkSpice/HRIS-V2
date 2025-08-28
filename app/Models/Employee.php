@@ -16,7 +16,9 @@ class Employee extends Model
         "address",
         "status",
         "phone",
-        "salary"
+        "salary",
+        "born_date",
+        "hire_date",
     ];
 
     public function department() {
