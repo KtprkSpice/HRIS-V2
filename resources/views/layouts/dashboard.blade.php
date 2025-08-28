@@ -264,6 +264,6 @@
             });
         });
     });
-    </script>
+</script>
 
 </html>
