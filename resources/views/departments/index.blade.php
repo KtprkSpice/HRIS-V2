@@ -48,6 +48,8 @@
         </tbody>
     </table>
 
+    <a href="#" class="btn btn-info">Add Department</a>
+
 
 
     <script>

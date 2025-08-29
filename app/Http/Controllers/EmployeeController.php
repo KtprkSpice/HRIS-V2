@@ -17,6 +17,11 @@ class EmployeeController extends Controller
         return view('employees.index', compact('employees'));
     }
 
+    public function show(Employee $employee) {
+        $departments = Department::all();
+        return view("employees.show", compact("employee", "departments"));
+    }
+
     public function create()
     {
         $departments = Department::all();

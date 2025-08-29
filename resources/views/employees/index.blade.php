@@ -72,6 +72,7 @@
                     <td>{{ $employee->email }}</td>
                     <td>{{ $employee->phone }}</td>
                     <td>
+                        <a href="{{ route("employees.show", $employee->id) }}" class="btn btn-sm btn-info">Show</a>
                         <a class="btn btn-warning btn-sm" href="{{ route("employees.edit", $employee->id) }}">Edit</a>
                         <form action="{{ route("employees.destroy", $employee->id) }}" class="delete-form inline" method="post">
                             @method("DELETE")
